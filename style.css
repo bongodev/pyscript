@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #060505;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#showtime {
+    border: 2px solid;
+    border-radius: 4px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    padding: 10px 30px;
+    color: #2dd1df;
+    font-size: 2rem;
+    border-image-slice: 1;
+}
+
+#showtime {
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}

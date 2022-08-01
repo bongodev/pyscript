@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CountDown App</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <py-env>
+        - numpy
+        - paths:
+            - ./demo.py
+    </py-env>
+
+</head>
+<body>
+    <div id="showtime" class="font-mono"></div>
+    <py-script>
+        from demo import time_difference
+        import asyncio
+
+        async def count_down():
+            end_time = '04:01:00'
+            while True:
+                await asyncio.sleep(1)
+                difference = time_difference(end_time)
+                pyscript.write("showtime", difference)
+                
+                if '-1' in difference:
+                    pyscript.write("showtime", "It's time for celebration!")
+                    break
+                else:
+                    continue
+
+        
+        pyscript_loader.close()
+        pyscript.run_until_complete(count_down())
+
+        
+        
+        
+    </py-script>
+</body>
+</html>
